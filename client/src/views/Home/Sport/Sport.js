@@ -1,5 +1,6 @@
 
 import React, { Component } from "react";
+import MediaCard from '../../../components/MediaCard/MediaCard';
 import { Card, CardTitle, CardText, CardImg, CardImgOverlay, Container, Row, Col} from 'reactstrap';
 import { Link } from 'react-router-dom';
 
@@ -11,78 +12,7 @@ class Sport extends React.Component {
       <div className='Container'>
         <Row>
           <Col>
-                <div>
-                <Card inverse>
-                        <CardImg width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97270&w=318&h=270&bg=333333&txtclr=666666" alt="Card image cap" />
-                        <CardImgOverlay>
-                        <CardTitle>Soccer</CardTitle>
-                        <Link to="Soccer">
-                           See Soccer news
-                        </Link>
-                        </CardImgOverlay>
-                </Card>
-                </div>
-                <div>
-                <Card inverse>
-                        <CardImg width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97270&w=318&h=270&bg=333333&txtclr=666666" alt="Card image cap" />
-                        <CardImgOverlay>
-                        <CardTitle>Cricket</CardTitle>
-                        <Link to="Cricket">
-                           See Cricket news
-                        </Link>
-                        </CardImgOverlay>
-                </Card>
-                </div>
-         </Col>
-
-          <Col>
-          <div>
-                <Card inverse>
-                        <CardImg width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97270&w=318&h=270&bg=333333&txtclr=666666" alt="Card image cap" />
-                        <CardImgOverlay>
-                        <CardTitle>Netball</CardTitle>
-                        <Link to="Netball">
-                           See Netball news
-                        </Link>
-                        </CardImgOverlay>
-                </Card>
-                </div>
-                <div>
-                <Card inverse>
-                        <CardImg width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97270&w=318&h=270&bg=333333&txtclr=666666" alt="Card image cap" />
-                        <CardImgOverlay>
-                        <CardTitle>Rugby</CardTitle>
-                        <Link to="Rugby">
-                           See Rugby news
-                        </Link>
-                        </CardImgOverlay>
-                </Card>
-                </div>
-          </Col>
-
-          <Col>
-          <div>
-                <Card inverse>
-                        <CardImg width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97270&w=318&h=270&bg=333333&txtclr=666666" alt="Card image cap" />
-                        <CardImgOverlay>
-                        <CardTitle>Hockey</CardTitle>
-                        <Link to="Hockey">
-                           See Hockey news
-                        </Link>
-                        </CardImgOverlay>
-                </Card>
-                </div>
-                <div>
-                <Card inverse>
-                        <CardImg width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97270&w=318&h=270&bg=333333&txtclr=666666" alt="Card image cap" />
-                        <CardImgOverlay>
-                        <CardTitle>Other</CardTitle>
-                        <Link to="Other">
-                           See Other news
-                        </Link>
-                        </CardImgOverlay>
-                </Card>
-                </div>
+                <MediaCard/>
           </Col>
 
           <Col>Ads</Col>
