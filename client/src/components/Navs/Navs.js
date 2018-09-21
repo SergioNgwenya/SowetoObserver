@@ -33,7 +33,7 @@ export default class Navs extends React.Component {
                 <NavLink to="/" className="nav-link"><i className="fa fa-home"></i> Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/News" className="nav-link">News</NavLink>
+                <NavLink to="/category/News" className="nav-link">News</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/category/entertainment" className="nav-link">Entertainment</NavLink>
@@ -45,10 +45,13 @@ export default class Navs extends React.Component {
                 <NavLink to="/category/community-service" className="nav-link">CommunityService</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/Classified" className="nav-link">Classified</NavLink>
+                <NavLink to="/category/Classified" className="nav-link">Classified</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/Video" className="nav-link">Video</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/About" className="nav-link">About</NavLink>
               </NavItem>
               {(this.props.user.role === "admin") &&<NavItem>
                 <NavLink to="/admin" className="nav-link">Manage</NavLink>

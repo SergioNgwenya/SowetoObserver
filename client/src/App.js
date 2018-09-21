@@ -22,7 +22,7 @@ import Business from './views/Home/classified/Business';
 import Other from './views/Home/classified/Other';
 import Property from './views/Home/classified/Property';
 import communityService from './views/Home/communityService/communityService';
-import AboutUs from './views/Home/AboutUs/AboutUs';
+import About from './views/Home/About/About';
 import contact from './views/Home/contact/contact';
 import Category from './views/Home/category/Category';
 
@@ -31,6 +31,7 @@ import Navs from './components/Navs/Navs';
 import Navbar1 from './components/Navbars/Navbar1';
 import Footer from './components/Footer/Footer';
 import SimpleSlider from "./components/Slider/Slider";
+import ViewStory from './views/ViewFullStory';
 
 
 class App extends Component {
@@ -39,6 +40,7 @@ class App extends Component {
         this.props.fetchArticles();
         this.props.fetchCategory();
     }
+    
     render() {
         const AdminRoute = ({ component: Component, ...rest }) => (
             <Route {...rest} render={(props) => (
@@ -77,11 +79,12 @@ class App extends Component {
                         <Route path="/Other" component={Other} />
 
                         <Route path="/communityService"  component={communityService} />
-                        <Route path="/AboutUs"  component={AboutUs} />
+                        <Route path="/About"  component={About} />
                         <Route path="/contact"  component={contact} />
-
-                        {/* <Footer user={this.props.user} /> */}
+                        <Route path="/viewstory/:filter"  component={ViewStory} />
+                        <Footer user={this.props.user} />
                         <AdminRoute path="/admin" component={Admin} />
+                     
                     </div>
                 </Router>
             </div>

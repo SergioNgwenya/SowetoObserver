@@ -1,8 +1,10 @@
 import React from 'react';
 import { Row, Col, Container, Jumbotron } from 'reactstrap';
-import { ListGroup, ListGroupItem} from 'reactstrap';
+import { ListGroup, ListGroupItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import AdComp from '../Home/adComponent';
+import { Card, CardText, CardTitle, CardImg, CardImgOverlay } from 'reactstrap';
+import CardSimple from '../../../components/CardSimple'
 
 class Category extends React.Component {
     render() {
@@ -11,12 +13,12 @@ class Category extends React.Component {
                 <Row>
                     <Col md="9">
 
-                        <hr />
+
                         <Jumbotron>
-                            <h3 className="lead">{(this.props.match.params.category).toUpperCase()}</h3>
+                            <h3 className="lead" style={{textAlign: 'center'}}>{(this.props.match.params.category).toUpperCase()}</h3>
                         </Jumbotron>
                         <Row>
-                            <Col md={12}>
+                            <Col md={6}>
                                 <ListGroup flush>
                                     <ListGroupItem className="lead" disabled tag="a" href="#">Headlines</ListGroupItem>
                                     <ListGroupItem tag="a" href="#">Dapibus ac facilisis in</ListGroupItem>
@@ -25,9 +27,14 @@ class Category extends React.Component {
                                     <ListGroupItem tag="a" href="#">Vestibulum at eros</ListGroupItem>
                                 </ListGroup>
                             </Col>
+
+                            <Col md={6}>
+                            <CardSimple/>
+                            </Col>
                         </Row>
                     </Col>
                     <Col md="3">
+                        <AdComp />
                         <AdComp />
                     </Col>
                 </Row>

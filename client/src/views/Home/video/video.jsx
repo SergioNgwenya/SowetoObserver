@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, CardImg } from 'reactstrap';
 import { Media } from 'reactstrap';
-
+import AdCorner from '../Home/adComponent'
 
 class video extends React.Component {
   render() {
@@ -27,7 +27,11 @@ class video extends React.Component {
               </Media>
              </Media>
             </Col>
-          <Col md="3">Ads</Col>
+            <Col md="3">
+           <div>
+             <AdCorner/>
+          </div>
+          </Col>
         </Row>
       </div>
     );
