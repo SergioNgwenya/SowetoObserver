@@ -19,20 +19,23 @@ class Home extends React.Component {
       slidesToScroll: 1
     };
     return (
-      <Container>
+      <Container style={{ paddingTop: 10 }}>
 
         <Row>
-          <Col md={9}>
+          <Col md={9} sm={12} xs={12}>
             <TopHead />
           </Col>
-          <Col md={3}>
+
+
+          <Col md={3} sm={12} xs={12}>
             <AdCorner />
           </Col>
         </Row>
 
-        <hr />
+
         <Row>
-          <Col xs="9">
+          <Col md={9} sm={12} xs={12}>
+            <br />
             <h3 className="lead">Top Stories</h3>
 
 
@@ -41,43 +44,47 @@ class Home extends React.Component {
                 {
                   this.props.articles.map((a, i) => {
                     return (
+                      <Link to={"/viewstory/"+ a._id}>
                       <div style={{ height: 250, width: 250, margin: 5 }}>
                         <img style={{ height: 200, minWidth: 250}}  src={a.picture || "https://cdn.cnn.com/cnnnext/dam/assets/180710080327-01-thai-cave-rescue-0710-overlay-tease.jpg"} alt="Card image cap"  />
                         <p>{a.title}</p>
                       </div>
+                      </Link>
                     )
                   })
                 }
               </div>
               :
-              <img src={loading} alt="loading" style={{ height: 200, width: 'auto' }} />
+              <img src={loading} alt="loading" style={{ paddingLeft: '50%', height: '80px', width: 'auto' }} />
             }
             <hr />
             <Row>
               <Col md={12}>
-              <h3 className="lead">Headlines</h3>
-                <ListGroup flush className="headlines" style={{height: 400, overflowY: 'scroll'}}>
-                  
+                <h3 className="lead">Headlines</h3>
+                <ListGroup flush className="headlines" style={{ height: 400, overflowY: 'scroll' }}>
+                                    
                   {this.props.articles ? <div>
                     {
                       this.props.articles.map((a, i) => {
                         return (
-                          <ListGroupItem key={i}>{a.title}</ListGroupItem>
+                          <Link to={"/viewstory/"+ a._id}>                 
+                              <ListGroupItem key={i}>{a.title}</ListGroupItem>
+                          </Link>
                         )
                       })
                     }
                   </div>
                     :
 
-                    <img src={loading} alt="loading" style={{ height: 200, width: 200 }} />
+                    <img src={loading} alt="loading" style={{paddingLeft: '35%', height: 200, width: 200 }} />
                   }
                 </ListGroup>
               </Col>
             </Row>
-            
-          </Col>
-          <Col xs="3">
 
+          </Col>
+          <Col md={3} sm={12} xs={12}>
+            <div class="fb-page" data-href="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs">Soweto Observer</a></blockquote></div>
           </Col>
         </Row>
       </Container>
@@ -87,14 +94,12 @@ class Home extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    articles: state.articles,
+    articles: state.articles.allarticles,
     categores: state.category
   }
 }
 
 export default connect(mapStateToProps)(Home);
-
-
 
 
 

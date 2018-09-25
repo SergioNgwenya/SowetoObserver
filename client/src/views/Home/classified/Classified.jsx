@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../../../assets/scss/now-ui-dashboard.css';
 import '../../../assets/css/demo.css';
-
-
-
+import AdCorner from '../Home/adComponent'
 
 class classified extends Component {
     render() {
@@ -72,7 +70,7 @@ class classified extends Component {
                         </Col>
                       </Row>
                     </Col>
-                  <Col xs="3">Advert space</Col>
+                   < AdCorner/>
                 </Row>
               </div>
             )
