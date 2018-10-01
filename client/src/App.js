@@ -29,7 +29,7 @@ import Category from './views/Home/category/Category';
 // Components
 import Navs from './components/Navs/Navs';
 import Navbar1 from './components/Navbars/Navbar1';
-import Footer from './components/Footer/Footer';
+import Footers from './components/Footer/Footers';
 import SimpleSlider from "./components/Slider/Slider";
 import ViewStory from './views/ViewFullStory';
 
@@ -82,7 +82,7 @@ class App extends Component {
                         <Route path="/About"  component={About} />
                         <Route path="/contact"  component={contact} />
                         <Route path="/viewstory/:filter"  component={ViewStory} />
-                        <Footer user={this.props.user} />
+                        <Footers user={this.props.user} />
                         <AdminRoute path="/admin" component={Admin} />
                      
                     </div>
