@@ -5,7 +5,7 @@ import renderHTML from 'react-render-html';
 import AdCorner from './Home/Home/adComponent';
 import { _fetchArticle, } from "../actions/article"
 import { connect } from 'react-redux';
-import loading from '../../src/images/loading.gif';
+import loader from '../../src/images/loader.gif';
 // import Moment from 'react-moment';
 //import * as FontAwesome from 'react-icons/lib/fa'
 class ViewStory extends React.Component {
@@ -54,7 +54,7 @@ class ViewStory extends React.Component {
                             }
                         </Row>
                             :
-                           <img src={loading} alt="loading" style={{ paddingLeft: '35%', height: 200, width: 'auto' }} />
+                           <img src={loader} alt="loader" style={{ paddingLeft: '35%', height: 200, width: 'auto' }} />
                         }
                         <Row>
                             <Col md={12}></Col>

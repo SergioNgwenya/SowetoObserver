@@ -4,7 +4,7 @@ import { ListGroup, ListGroupItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import AdComp from '../Home/adComponent';
 import { Card, CardText, CardTitle, CardImg, CardImgOverlay } from 'reactstrap';
-import CardSimple from '../../../components/CardSimple'
+import CardSimple from '../../../components/Cards/CardSimple'
 
 class Category extends React.Component {
     render() {
@@ -15,7 +15,7 @@ class Category extends React.Component {
 
 
                         <Jumbotron>
-                            <h3 className="lead" style={{textAlign: 'center'}}>{(this.props.match.params.category).toUpperCase()}</h3>
+                            <h3 className="lead" style={{ textAlign: 'center' }}>{(this.props.match.params.category).toUpperCase()}</h3>
                         </Jumbotron>
                         <Row>
                             <Col md={6}>
@@ -29,12 +29,15 @@ class Category extends React.Component {
                             </Col>
 
                             <Col md={6}>
-                            <CardSimple/>
+                                <CardSimple />
                             </Col>
                         </Row>
                     </Col>
                     <Col md="3">
                         <AdComp />
+                        <Col md={3} sm={12} xs={12}>
+                            <div class="fb-page" data-href="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Soweto-Observer-337066023393491/?ref=br_rs">Soweto Observer</a></blockquote></div>
+                        </Col>
                         <AdComp />
                     </Col>
                 </Row>

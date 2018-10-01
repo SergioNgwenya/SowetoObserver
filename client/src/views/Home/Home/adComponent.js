@@ -13,9 +13,9 @@ class AdCorner extends Component {
 
             <div className = "adCard">
                 <h3 className="lead"></h3>
-                <a href="https://www.identity.co.za/" target="blank">
+                <a href="https://www.jetonline.co.za/" target="blank">
                     <Card>
-                        <CardImg style={{height: '300px', width: '100%'}} src="https://scontent-lga3-1.cdninstagram.com/vp/3a05826440a4adc35ca4a235d45233cb/5BD2CF0C/t51.2885-15/e35/32396003_2116017712012209_6957621980413558784_n.jpg?ig_cache_key=MTc5MDcwNDQzMjQ1MjY1MDI4Mg%3D%3D.2" alt="Card image cap" />
+                        <CardImg style={{height: '250px', width: '100%'}} src="https://www.jetonline.co.za/media/wysiwyg/Low_res_Cover_OctNov_Trevor_Noah2.jpg" alt="Ads" />
                     </Card>
 
                 </a>
