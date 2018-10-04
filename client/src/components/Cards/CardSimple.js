@@ -5,8 +5,8 @@ const CardSimple = (props) => {
   return (
     <div>
       <Card inverse>
-        <CardImg width="100%" src="https://www.procurious.com/blog-content/2016/04/Small-Business.jpg" alt="Zuma" />
-        <CardImgOverlay style={{color:'black'}}>
+        <CardImg width="100%" height="250px" src="https://www.procurious.com/blog-content/2016/04/Small-Business.jpg" alt="business" />
+        <CardImgOverlay >
           <CardText>Black Owned businesses </CardText>
         </CardImgOverlay>
       </Card>
