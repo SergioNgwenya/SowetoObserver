@@ -1,50 +1,41 @@
-'use strict';
-const storage = require('@google-cloud/storage');
-const fs = require('fs')
+// const aws = require('aws-sdk');
+// aws.config.region = 'eu-west-3';
+// const secret = require('../config/secret');
 
-const gcs = storage({
-  projectId: 'api-project-88418002742',
-  keyFilename: './API Project-52028a9694cc.json'
-});
-let ImgUpload = {};
+// var fileStorage = {};
 
-const bucketName = 'sowetoobserver'
-const bucket = gcs.bucket(bucketName);
+// fileStorage.fileUpload = (req, res, next) => {
+//     if (req.file) {
+//         const s3 = new aws.S3({
+//             accessKeyId: secret.aws_id,
+//             secretAccessKey: secret.aws_secret
+//         });
+//         const fileType = req.file.mimetype;
+//         const fileName = req.file.originalname;
 
- ImgUpload.getPublicUrl = function(filename) {
-  return 'https://storage.googleapis.com/' + bucketName + '/' + filename;
-}
+//         const s3Params = {
+//             Bucket: secret.bucket_name,
+//             Key: fileName,
+//             Expires: 60,
+//             ContentType: fileType,
+//             ACL: 'public-read'
+//         };
 
+//         s3.getSignedUrl('putObject', s3Params, (err, data)=>{
+//             if(err){
+//                 console.log(err);
+//                 return next(err);
+//             }
+//             console.log(data);
+//             const returnData = {
+//                 signedRequest: data,
+//                 url: `https://${secret.bucket_name}.s3.amazonaws.com/${fileName}`
+//             };
+//             req.file.fileObject = returnData;
+//             next();
+//         });
+//     }
 
+// }
 
-ImgUpload.uploadToGcs = (req, res, next) => {
-    //console.log(req.file);
-  if(!req.file) {return next();}
-
-  // Can optionally add a path to the gcsname below by concatenating it before the filename
-  const gcsname = Date.now() + req.file.originalname;
-  const file = bucket.file(gcsname);
-
-  const stream = file.createWriteStream({
-    metadata: {
-      contentType: req.file.mimetype
-    }
-  });
-
-  stream.on('error', (err) => {
-    req.file.cloudStorageError = err;
-    next(err);
-  });
-
-  stream.on('finish', () => {
-    req.file.cloudStorageObject = gcsname;
-    file.makePublic().then(() => {
-      req.file.cloudStoragePublicUrl = ImgUpload.getPublicUrl(gcsname);
-      next();
-    });
-  });
-
-  stream.end(req.file.buffer);
-}
-
-module.exports = ImgUpload;
+// module.exports = fileStorage;

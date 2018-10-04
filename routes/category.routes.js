@@ -10,7 +10,7 @@ router.post('/api/category', (req, res)=>{
     });
         new_category.save(err=>{
         if(err){console.log(err)}
-        res.json({response:"success"})
+        res.json({response:"Created successfully"})
     });
 });
 
@@ -40,8 +40,10 @@ router.get('/api/category/:id', function(req, res){
 router.delete('/api/category/:id', function(req, res){
     Category.findByIdAndRemove({_id:req.params.id}, function(err,foundCategory){
         if(err) return next(err);
-        res.json(foundCategory);
-    
+            res.json(foundCategory);
+        if (!foundCategory){
+            return res.json({message: "No record found"})
+        }
     });
 });
 
