@@ -5,7 +5,7 @@ const MoreCards = (props) => {
     return (
         <div>
             <Card inverse>
-                <CardImg width="100%" height="120px" src="http://kdaniellesmedia.com/wp-content/uploads/2018/04/Winnie-Mandela...jpg" alt="Mama Winnie" />
+                <CardImg width="100%" height="150px" src="http://kdaniellesmedia.com/wp-content/uploads/2018/04/Winnie-Mandela...jpg" alt="Mama Winnie" />
                 <CardImgOverlay>
                     <CardTitle>Winnies 70th birthday</CardTitle>
                 </CardImgOverlay>
@@ -17,7 +17,7 @@ const MoreCards = (props) => {
                 </CardImgOverlay>
             </Card> */}
             <Card inverse>
-                <CardImg width="100%" height="120px" src="https://tse1.mm.bing.net/th?id=OIP.jFrq2KYch84xCozjYxb3VQHaFj&amp;pid=Api" alt="Local soccer" />
+                <CardImg width="100%" height="143px" src="https://tse1.mm.bing.net/th?id=OIP.jFrq2KYch84xCozjYxb3VQHaFj&amp;pid=Api" alt="Local soccer" />
                 <CardImgOverlay>
                     <CardTitle>Protea vs Protea Glen</CardTitle>
                 </CardImgOverlay>

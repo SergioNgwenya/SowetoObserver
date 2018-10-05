@@ -20,7 +20,7 @@ class Footers extends React.Component{
                      <a href="/">Home</a>&nbsp;&nbsp;&nbsp;     |     &nbsp;&nbsp;&nbsp;<a href="/About">About</a>    
                     
                     </div>
-                    <div class="social-icons">
+                    {/* <div class="social-icons">
                                 
                                 <ul class="nomargin">
                                 
@@ -33,7 +33,7 @@ class Footers extends React.Component{
             <a href="mailto:robert@sowetoobserver.co.za"><i class="fa fa-envelope-square fa-3x social-em" id="social"></i></a>
                                 
                                 </ul>
-                            </div>
+                            </div> */}
                     
                     <div className="copyright">
                     

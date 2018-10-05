@@ -18,9 +18,39 @@
     
  }
 
+   
     .footers{
+        background-color: #424242;
+        color: white;
+        /* padding-bottom: 5px;
+        padding-top: 15px; */
+        background-position: 100px;
+        text-transform: uppercase;
+        font-size: 0.7142em;
+        padding: 0.5rem 0.7rem;
+        line-height: 1.625rem;
+        /* margin-bottom:100px; */
         margin-top: 15px;
+        position: relative;
+        
+    
     }
+    .videos{
+    
+        margin: auto;
+        width: 100%;  
+        
+        -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+-moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.48);
+padding-top:15px ;
+
+       
+    }
+    /* .videos p{
+        font-size: 5px;
+    }
+     */
 
     /* about page */
 .About{
@@ -118,6 +148,7 @@
     color: white;
     padding-bottom: 15px;
     padding-top: 15px;
+    position: relative;
 }
 
 .copyright{

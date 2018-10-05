@@ -49,7 +49,7 @@ class App extends Component {
                 : <Redirect to='/admin/' />
             )} />
           );
-
+                console.log('yebo',this.props.articles)
         return (
             <div>
               
@@ -94,7 +94,8 @@ class App extends Component {
 
 function mapStateToProp(state){
     return {
-        user: state.auth
+        user: state.auth,
+        articles: state.articles
     }
 }
 

@@ -2,13 +2,12 @@
   "name": "soweto-observer",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://localhost",
   "proxy": {
     "/api/*": {
-      "target": "http://localhost:8080"
+      "target": "https://sowetoobserver.herokuapp.com"
     },
     "/auth/*": {
-      "target": "http://localhost:8080"
+      "target": "https://sowetoobserver.herokuapp.com"
     }
   },
   "dependencies": {
@@ -31,6 +30,7 @@
     "react-google-maps": "9.2.2",
     "react-icons": "^2.2.7",
     "react-md-spinner": "^0.2.5",
+    "react-moment": "^0.8.1",
     "react-notification-alert": "0.0.7",
     "react-player": "^1.6.6",
     "react-quill": "^1.4.0-beta.1",
