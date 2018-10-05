@@ -6,9 +6,10 @@ const articleSchema = new Schema({
     picture: { type: String },
     body: { type: String },
     status: { type: String, default: "draft", enum: ["published", "draft", "expired"] },
-    isDraft: { type: Boolean, default: true },
-    author: [{ type: Schema.Types.ObjectId, ref: "User" }],
-    category: [{ type: Schema.Types.ObjectId, ref: "Category" }],
+    // author: { type: Schema.Types.ObjectId, ref: "User" },
+    // category: { type: Schema.Types.ObjectId, ref: "Category" },
+    author: {type: String},
+    category: {type: String, enum: ["Sport", "Entertainment", "Politics", "Classified"]},
 }, { timestamps: { createdAt: 'createdAt' } });
 
 module.exports = mongoose.model('Article', articleSchema);//Exporting the model to be available to routes

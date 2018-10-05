@@ -12,7 +12,7 @@ path = require('path');
 
 const app = express();
 
- mongoose.connect(secret.database, (err)=>{
+ mongoose.connect(secret.database, {useNewUrlParser: true}, (err)=>{
     if(err){
         console.log(err.message)
     }
