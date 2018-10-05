@@ -73,7 +73,7 @@ const video = (props) => {
                 <Link to='/'>
                 Contrary to popular belief
                </Link>
-               <p > <small>3 oct</small></p>
+               <p> <small>3 oct</small></p>
                 </div></Col>
 
           <Col xs="6" sm="4"><ReactPlayer
@@ -136,9 +136,9 @@ const video = (props) => {
                 <Link to='/'>
                 Contrary to popular belief
                </Link>
-               <p> <small>3h ago</small></p>
+               <p><small>3h ago</small></p>
                 </div></Col>
-
+                
           <Col xs="6" sm="4"><ReactPlayer
                   url='https://www.youtube.com/watch?v=T3k2k_G2wNw'
                   className='react-player'
