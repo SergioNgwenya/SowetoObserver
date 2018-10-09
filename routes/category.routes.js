@@ -22,7 +22,7 @@ router.get('/api/category', (req, res, next)=>{
         if(err) return next(err);
         //checking if the results have been retained.
         if (!foundCategory){
-            return res.json({message:"No categories were found"})
+            return res.json({response:"No categories were found"})
         }
         res.json(foundCategory);
     });
@@ -39,10 +39,15 @@ router.get('/api/category/:id', function(req, res){
 //Request for and deleting a Category (GET single category)
 router.delete('/api/category/:id', function(req, res){
     Category.findByIdAndRemove({_id:req.params.id}, function(err,foundCategory){
-        if(err) return next(err);
+        if(err){
+            return next(err);
+        }
+        else{
+            res.json({res: "Deleted succesfully"})
+        }
             res.json(foundCategory);
         if (!foundCategory){
-            return res.json({message: "No record found"})
+            return res.json({response: "No record found"})
         }
     });
 });

@@ -69,15 +69,24 @@ console.log(req.file)
 //creating a GET articles endpoint to get/retrive all information from DB
 router.get('/api/articles', (req, res,next)=>{
     //Function to get all articles from a database that were created based on the UserSchema
-    Article.find()
-    .populate('category')
-        //used for checcking for errors
-     .exec((err,article)=>{;
-        //checking if the results have been retained.
-        if (err) return next(err);
-        // return res.json({message:"No Article were found"})
-        res.json(article);
+    
+    Article.find({}, function(err, foundArticle){
+        if(err) return next(err);
+        if(!foundArticle){
+            return rse.json({message:"No articles found!"})
+        }
+        res.json(foundArticle);
     });
+    
+    // Article.find()
+    // .populate('category')
+    //     //used for checcking for errors
+    //  .exec((err,article)=>{;
+    //     //checking if the results have been retained.
+    //     if (err) return next(err);
+    //     // return res.json({message:"No Article were found"})
+    //     res.json(article);
+    // });
 });
 
 //Request for getting a single article (GET single article)
@@ -88,12 +97,12 @@ router.get('/api/articles/:id', function(req, res){
     });
 });
 
-router.get('/api/articles/q', function(req, res){
-    Article.find({_id:req.params.id}, function(err,foundArticle){
-        if(err) return next(err);
-        res.json(foundArticle);
-    });
-});
+// router.get('/api/articles/q', function(req, res){
+//     Article.find({_id:req.params.id}, function(err,foundArticle){
+//         if(err) return next(err);
+//         res.json(foundArticle);
+//     });
+// });
 
 //Request for and deleting an article (by single article)
 router.delete('/api/articles/:id', function(req, res){
@@ -107,16 +116,16 @@ router.delete('/api/articles/:id', function(req, res){
 router.put('/api/articles/:id', function(req,res,next){
     Article.findById(req.params.id, function(err,foundArticle){
         if(err) return next(err);
-        if(req.body.title){
-            foundArticle.title = req.body.title;
-        }
-        if(req.body.body){
-            foundArticle.body = req.body.body;
-        }
+        // if(req.body.title){
+        //     foundArticle.title = req.body.title;
+        // }
+        // if(req.body.body){
+        //     foundArticle.body = req.body.body;
+        // }
         foundArticle.save(function(err, updatedArticle){
             if (err) return next(err);
             let obj = {
-                message:"Article updated successfully",
+                res:"Article updated successfully",
                 updatedArticle: updatedArticle
             }
             res.json(obj)
