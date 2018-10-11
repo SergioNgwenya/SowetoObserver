@@ -60,9 +60,7 @@ const video = (props) => {
 const {videos } = props;
   return (
     <Container className="videos" style={{ paddingTop: "50px" }}>
-    
-      
-       <Row>
+      <Row>
         <Col md="9">
         <Row>
           <Col xs="6" sm="4">
@@ -115,12 +113,12 @@ const {videos } = props;
         {/* <hr></hr>
        
           <div>
-          <Row>
-          <Col xs="8">
-          <ReactPlayer
+            <Row>
+              <Col xs="8">
+                <ReactPlayer
                   url='https://www.youtube.com/watch?v=-brxA11BCIc'
                   className='react-player'
-                  width='450px'
+                  width='550px'
                   height='400px'
 
                 />
@@ -144,33 +142,33 @@ const {videos } = props;
                   
                 /> 
                 <Link to='/'>
-                Contrary to popular belief
+                 
                </Link>
-               <p><small>3h ago</small></p>
-                </div></Col>
                 
-          <Col xs="6" sm="4"><ReactPlayer
-                  url='https://www.youtube.com/watch?v=T3k2k_G2wNw'
-                  className='react-player'
-                  width='100%'
-                  height='100%'
+              </div></Col>
 
-                />
+              <Col xs="6" sm="4"><ReactPlayer
+                url='https://www.youtube.com/watch?v=T3k2k_G2wNw'
+                className='react-player'
+                width='100%'
+                height='100%'
+
+              />
                 <Link to='/'>
-                Contrary to popular belief,Contrary to
+                
                 </Link>
-                <p> <small>6h ago</small></p>
-                </Col>
+                
+              </Col>
 
-          <Col sm="4"><ReactPlayer
-                  url='https://www.youtube.com/watch?v=rnwlWn603g4'
-                  className='react-player'
-                  width='100%'
-                  height='100%'
+              <Col sm="4"><ReactPlayer
+                url='https://www.youtube.com/watch?v=rnwlWn603g4'
+                className='react-player'
+                width='100%'
+                height='100%'
 
-                />
+              />
                 <Link to='/'>
-                Contrary to popular belief,
+                 
                 </Link>
                 <p> <small>4 oct</small></p>
                 </Col>

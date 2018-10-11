@@ -49,7 +49,7 @@ class App extends Component {
                 : <Redirect to='/admin/' />
             )} />
           );
-                console.log('yebo',this.props.articles)
+        
         return (
             <div>
               
