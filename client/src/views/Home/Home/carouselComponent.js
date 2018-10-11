@@ -63,7 +63,7 @@ class TopHead extends Component {
   render() {
     const { activeIndex, items } = this.state;
     const {articles} = this.props;
-    console.log('KG',items);
+    
     if(articles){
     const slides = articles.map((article) => {
       return (

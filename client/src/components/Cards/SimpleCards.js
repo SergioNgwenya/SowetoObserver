@@ -1,17 +1,38 @@
 import React from 'react';
 import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from 'reactstrap';
+import { connect } from 'react-redux';
 
 const SingleCard = (props) => {
+  const { articles } = props;
+  console.log('jnjuihnuih', articles);
   return (
+
     <div>
-      <Card inverse>
-        <CardImg width="100%" src="http://1.bp.blogspot.com/-vtXThXg7-Sc/UsMBUea6xAI/AAAAAAAAAOw/eD-BWXSxMSY/s1600/_MG_2517.jpg" alt="Dagga plant" />
-        <CardImgOverlay>
-          <CardTitle>Rumours of dagga being legalised in South Africa.</CardTitle>         
-        </CardImgOverlay>
-      </Card>
+    
+        {articles ?
+          articles.map((art, ind) => {
+            return (
+              <div>
+              <Card>
+              <CardImg width="100%" height="143px" src={art.picture} alt="Local soccer" />
+                <CardImgOverlay>
+                    <CardTitle>{art.title}</CardTitle>
+                </CardImgOverlay>
+                  
+                </Card>
+              </div>
+            )
+          })
+          : <div>loading</div>
+        }
+    
     </div>
   );
 };
+function mapStateToProps(state) {
+  return {
+    articles: state.articles,
+  }
+}
 
-export default SingleCard;
+export default connect(mapStateToProps)(SingleCard);
