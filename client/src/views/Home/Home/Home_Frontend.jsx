@@ -120,7 +120,7 @@ class Home extends Component {
           <Col md='9'>
             <TopHead />
             <hr />
-            <h3 style={{fontFamily: 'Nova Flat', fontWeight: 'bold'}}>TOP STORIES</h3>
+            <h3 style={{fontFamily: 'Nova Flat', fontWeight: 'bold'}}>BREAKING NEWS</h3>
             <Row>
               <Col md='7'>
                 <SingleCard />

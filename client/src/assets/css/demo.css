@@ -28,7 +28,6 @@
 
    
     .footers{
-<<<<<<< HEAD
         background-color: #424242;
         color: white;
         /* padding-bottom: 5px;
@@ -43,10 +42,8 @@
         position: relative;
         
     
-=======
         margin-top: 120px;
         
->>>>>>> a3b24895d86ccee9b4240d31f2fec7b32d9b363c
     }
     .videos{
     
@@ -161,11 +158,8 @@ padding-top:15px ;
     color: white;
     padding-bottom: 15px;
     padding-top: 15px;
-<<<<<<< HEAD
     position: relative;
-=======
     margin-top: 50px;
->>>>>>> a3b24895d86ccee9b4240d31f2fec7b32d9b363c
 }
 
 .copyright{
@@ -357,4 +351,27 @@ body::-webkit-scrollbar-thumb {
 }
 .headlines::-webkit-scrollbar-thumb{
     background-color: #101010;
+}
+.mapouter{
+    overflow: hidden;
+    height:500px;
+    width:600px;
+    
+}
+.gmap_canvas {
+    background: none!important;
+    height:500px;
+    width:600px;
+}
+.map{
+    padding-left: 230px;
+}
+.AboutPage{
+    font-size: 20px;
+    margin: auto;
+    width: 70%; 
+}
+
+.Header{
+    font-weight: 550;
 }

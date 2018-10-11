@@ -2,12 +2,13 @@
   "name": "soweto-observer",
   "version": "1.0.0",
   "private": true,
+  "homepage": "http://localhost:8080",
   "proxy": {
     "/api/*": {
-      "target": "https://sowetoobserver.herokuapp.com"
+      "target": "http://localhost:8080"
     },
     "/auth/*": {
-      "target": "https://sowetoobserver.herokuapp.com"
+      "target": "http://localhost:8080"
     }
   },
   "dependencies": {
