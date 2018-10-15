@@ -10,6 +10,7 @@ passport = require('passport'),
 secret = require('./config/secret'),
 path = require('path');
 
+
 const app = express();
 
  mongoose.connect(secret.database, {useNewUrlParser: true}, (err)=>{
@@ -37,13 +38,21 @@ app.use(passport.session());
 require('./routes/auth.route')(app);
 var categoryRoutes = require('./routes/category.routes');
 var articleRoutes = require('./routes/articles.routes');
+<<<<<<< HEAD
 var videoRoutes = require('./routes/video.routes');
+=======
+var advertRoutes = require('./routes/advert.routes');
+>>>>>>> d55255f43f83bd2bb7ac82b2f2bfec98e0e5249a
 
 //Using the endpoint results.
 // app.use(userRoutes);
 app.use(categoryRoutes);
 app.use(articleRoutes);
+<<<<<<< HEAD
 app.use(videoRoutes);
+=======
+app.use(advertRoutes);
+>>>>>>> d55255f43f83bd2bb7ac82b2f2bfec98e0e5249a
 
 app.get('*', (req, res)=>{
     res.sendFile(path.join(__dirname + '/client/build/index.html'));

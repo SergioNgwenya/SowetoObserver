@@ -49,15 +49,22 @@
 // export default video;
 
 import React from 'react';
-import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardSubtitle,CardImgOverlay } from 'reactstrap';
 import AdCorner from '../Home/adComponent';
 import ReactPlayer from 'react-player';
 import { Container, Row, Col, CardImg } from 'reactstrap';
+<<<<<<< HEAD
+import { Link } from 'react-router-dom';
+=======
 import { Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+>>>>>>> 5dbeb8069b15483d2932beffb2b73b7a704b2109
 
 const video = (props) => {
+const {videos } = props;
   return (
     <Container className="videos" style={{ paddingTop: "50px" }}>
+<<<<<<< HEAD
     
       
        <Row>
@@ -66,51 +73,67 @@ const video = (props) => {
           <Col xs="6" sm="4"><div><ReactPlayer
                   url='https://www.youtube.com/watch?v=-brxA11BCIc'
                   className='react-player'
+=======
+      <Row>
+        <Col md="9">
+        <Row>
+          <Col xs="6" sm="4">
+          <div>
+          {videos ?
+          videos.map((div, ind) => {
+            return (
+            <ReactPlayer
+                  url={div.picture}
+                 
+                  classme='react-player'
+>>>>>>> 5dbeb8069b15483d2932beffb2b73b7a704b2109
                   width='100%'
                   height='100%'
                   
+                
                 /> 
-                <Link to='/'>
-                Contrary to popular belief
-               </Link>
-               <p > <small>3 oct</small></p>
+                
+              )
+            })
+            : <div>loading</div>
+          }
                 </div></Col>
 
-          <Col xs="6" sm="4"><ReactPlayer
-                  url='https://www.youtube.com/watch?v=822dUU3ANkE'
-                  className='react-player'
-                  width='100%'
-                  height='100%'
+          <Col xs="6" sm="4"><div></div></Col>
 
-                />
-                <Link to='/'>
-                Contrary to popular belief,Contrary to
-                </Link>
-                <p> <small>2h ago</small></p>
-                </Col>
-
-          <Col sm="4"><ReactPlayer
-                  url='https://www.youtube.com/watch?v=z6IR_YDQF-I'
-                  className='react-player'
-                  width='100%'
-                  height='100%'
-
-                />
-                <Link to='/'>
-                Contrary to popular belief,
-                </Link>
-                <p> <small>4 oct</small></p>
-                </Col>
+          <Col sm="4"><div></div></Col>
         </Row>
-        <hr></hr>
+        {/* <div>
+          <Row>
+            <Col xs="6" sm="4">
+            {articles ?
+          articles.map((art, ind) => {
+            return (
+              <div>
+              <Card>
+              <CardImg width="100%" height="143px" src={art.picture} alt="Local soccer" />
+                <CardImgOverlay>
+                    <CardTitle>{art.title}</CardTitle>
+                </CardImgOverlay>
+                  
+                </Card>
+              </div>
+            )
+          })
+          : <div>loading</div>
+        }
+            </Col>
+            </Row>
+          </div> */}
+        {/* <hr></hr>
        
           <div>
-          <Row>
-          <Col xs="8">
-          <ReactPlayer
+            <Row>
+              <Col xs="8">
+                <ReactPlayer
                   url='https://www.youtube.com/watch?v=-brxA11BCIc'
                   className='react-player'
-                  width='450px'
+                  width='550px'
                   height='400px'
 
                 />
@@ -123,8 +146,8 @@ const video = (props) => {
           
           </Col>
         </Row>
-        <hr></hr>
-        <br/>
+        <hr></hr> */}
+        {/* <br/>
         <Row>
           <Col xs="6" sm="4"><div><ReactPlayer
                   url='https://www.youtube.com/watch?v=x7GOnvKQ2WU'
@@ -134,38 +157,38 @@ const video = (props) => {
                   
                 /> 
                 <Link to='/'>
-                Contrary to popular belief
+                 
                </Link>
-               <p> <small>3h ago</small></p>
-                </div></Col>
+                
+              </div></Col>
 
-          <Col xs="6" sm="4"><ReactPlayer
-                  url='https://www.youtube.com/watch?v=T3k2k_G2wNw'
-                  className='react-player'
-                  width='100%'
-                  height='100%'
+              <Col xs="6" sm="4"><ReactPlayer
+                url='https://www.youtube.com/watch?v=T3k2k_G2wNw'
+                className='react-player'
+                width='100%'
+                height='100%'
 
-                />
+              />
                 <Link to='/'>
-                Contrary to popular belief,Contrary to
+                
                 </Link>
-                <p> <small>6h ago</small></p>
-                </Col>
+                
+              </Col>
 
-          <Col sm="4"><ReactPlayer
-                  url='https://www.youtube.com/watch?v=rnwlWn603g4'
-                  className='react-player'
-                  width='100%'
-                  height='100%'
+              <Col sm="4"><ReactPlayer
+                url='https://www.youtube.com/watch?v=rnwlWn603g4'
+                className='react-player'
+                width='100%'
+                height='100%'
 
-                />
+              />
                 <Link to='/'>
-                Contrary to popular belief,
+                 
                 </Link>
                 <p> <small>4 oct</small></p>
                 </Col>
         </Row>
-          
+           */}
           
           
 
@@ -181,7 +204,11 @@ const video = (props) => {
               <img width="50%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" /> 
             </Card>  */}
 
+<<<<<<< HEAD
            </div> 
+=======
+           {/* </div>  */}
+>>>>>>> 5dbeb8069b15483d2932beffb2b73b7a704b2109
         </Col>
         <Col md="3">
           <AdCorner />
@@ -193,7 +220,13 @@ const video = (props) => {
   );
 };
 
-export default video;
+function mapStateToProps(state) {
+  return {
+    videos: state.videos,
+  }
+}
+
+export default connect(mapStateToProps)(video);
 
 
 

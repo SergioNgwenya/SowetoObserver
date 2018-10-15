@@ -5,11 +5,11 @@ const secret = require('./secret');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 //const FacebookStrategy = require('passport-facebook').Strategy;
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser((user, done) => {
     done(null, user._id);
 });
 
-passport.deserializeUser(function(id, done) {
+passport.deserializeUser((id, done) => {
     User.findById(id)
     .exec(function(err, user) {
         done(err, user);
@@ -40,7 +40,7 @@ passport.use(
     )
   );
 
-exports.isAuthenticated = function(req, res, done) {
+exports.isAuthenticated = (req, res, done) =>{
     if (req.isAuthenticated()) {
         return done();
     }

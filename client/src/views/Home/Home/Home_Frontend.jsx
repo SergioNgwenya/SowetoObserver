@@ -6,10 +6,12 @@ import FB_Int from '../../../components/Intergration/FB_Int';
 import SingleCard from '../../../components/Cards/SimpleCards';
 import MoreCards from '../../../components/Cards/MoreCards';
 import Headlines from '../../../components/Headline/Headlines';
+import { connect } from 'react-redux';
+
 //import { Sidebar } from '../../../components';//
 // import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
 // import { Card, Button, CardImg, CardLink, CardTitle, CardText, CardDeck, CardSubtitle, CardBody } from 'reactstrap';
-// // import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+// import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 // import { Media } from 'reactstrap';
 // import { Link } from 'react-router-dom';
 // import TopHead from './carouselComponent';
@@ -120,7 +122,7 @@ class Home extends Component {
           <Col md='9'>
             <TopHead />
             <hr />
-            <h3 style={{fontFamily: 'Nova Flat', fontWeight: 'bold'}}>TOP STORIES</h3>
+            <h3 style={{fontFamily: 'Nova Flat', fontWeight: 'bold'}}>BREAKING NEWS</h3>
             <Row>
               <Col md='7'>
                 <SingleCard />
@@ -146,8 +148,14 @@ class Home extends Component {
     )
   }
 }
+function mapStateToProps(state) {
+  return {
+    articles: state.articles,
+    categores: state.category
+  }
+}
 
-export default Home;
+export default connect(mapStateToProps)(Home);
 
 
 

@@ -2,6 +2,7 @@ import {
     FETCH_ARTICLE, FETCH_ARTICLES
 } from './types';
 
+
 export const _fetchArticles = () => async dispatch => {
     try {
         const res = await fetch('/api/articles');

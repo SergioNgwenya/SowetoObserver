@@ -2,13 +2,20 @@
   "name": "soweto-observer",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://localhost",
+  "homepage": "http://localhost:8080",
   "proxy": {
     "/api/*": {
+<<<<<<< HEAD
+      "target": "https://localhost:8080"
+    },
+    "/auth/*": {
+      "target": "https://localhost:8080"
+=======
       "target": "http://localhost:8080"
     },
     "/auth/*": {
       "target": "http://localhost:8080"
+>>>>>>> 5dbeb8069b15483d2932beffb2b73b7a704b2109
     }
   },
   "dependencies": {
@@ -32,6 +39,7 @@
     "react-google-maps": "9.2.2",
     "react-icons": "^2.2.7",
     "react-md-spinner": "^0.2.5",
+    "react-moment": "^0.8.1",
     "react-notification-alert": "0.0.7",
     "react-player": "^1.6.6",
     "react-quill": "^1.4.0-beta.1",
