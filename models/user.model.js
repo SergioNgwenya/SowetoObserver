@@ -9,4 +9,10 @@ const userSchema = new Schema({
     role: {type: String, default: "user", enum: ["admin", "user", "editor"]}
 });
 
+userSchema.methods.generateHash = (googleId)=>{
+    return bcrypt.hashsync(googleId, bcrypt.genSaltSync(8), null);
+};
+
+
+
 module.exports = mongoose.model("User", userSchema);

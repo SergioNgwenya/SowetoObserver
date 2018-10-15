@@ -1,14 +1,35 @@
 const Advert = require('../models/advert.model');
 const router = require('express').Router();
 const Multer = require('multer');
-const multer = Multer({
-    storage: Multer.memoryStorage()
+const multers3 = require('multer-s3');
+const secret = require('../config/secret');
+const aws = require('aws-sdk');
+
+const s3 = new aws.S3({
+    accessKeyId: secret.aws_id,
+    secretAccessKey: secret.aws_secret
 });
+
+
+const multer = Multer({
+    storage: multers3({
+         s3: s3,
+         bucket: 'sowetoobserver',
+         acl: "public-read",
+         metadata: (req, file, cb) => {
+             cb(null, {fieldName: file.fieldname})
+         },
+         key: (req, file, cb)=>{
+             cb(null, file.originalname)
+         }
+    })
+});
+
 const imgUpload = require('../utility/imgUpload');
 
 //Creating a POST endpoint
-    router.post('/api/advert', multer.single("picture"), imgUpload.uploadToGcs, (req, res, next)=>{
-
+    router.post('/api/advert', multer.single("picture"), (req, res, next)=>{
+        console.log(req.file)
     var advert = new Advert();
     let new_advert = new Advert({
         title:req.body.title,
@@ -18,23 +39,24 @@ const imgUpload = require('../utility/imgUpload');
         // new_advert.category = [req.body.category];
 
         new_advert.save(err=>{
+            // (parameter) err: any
         if(err){console.log(err)}
         res.json({response:"New advert created"})
     });
 });
 
 //creating a GET advert endpoint to get/retrive all information from DB
-// router.get('/api/advert', (req, res,next)=>{
-//     //Function to get all advert from a database that were created based on the UserSchema
-//     Advert.find()
-//     .populate('category')
-//         //used for checcking for errors
-//      .exec((err,advert)=>{;
-//         //checking if the results have been retained.
-//         if (err) return next(err);
-//         res.json(advert);
-//     });
-// });
+router.get('/api/advert', (req, res,next)=>{
+    //Function to get all advert from a database that were created based on the UserSchema
+    Advert.find()
+    .populate('category')
+        //used for checcking for errors
+     .exec((err,advert)=>{;
+        //checking if the results have been retained.
+        if (err) return next(err);
+        res.json(advert);
+    });
+});
 
 //Request for getting a single advert (GET single article)
 router.get('/api/advert/:id', (req, res) => {

@@ -4,10 +4,10 @@
   "private": true,
   "proxy": {
     "/api/*": {
-      "target": "https://sowetoobserver.herokuapp.com"
+      "target": "https://localhost:8080"
     },
     "/auth/*": {
-      "target": "https://sowetoobserver.herokuapp.com"
+      "target": "https://localhost:8080"
     }
   },
   "dependencies": {
