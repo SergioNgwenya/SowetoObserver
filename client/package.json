@@ -2,12 +2,20 @@
   "name": "soweto-observer",
   "version": "1.0.0",
   "private": true,
+  "homepage": "http://localhost:8080",
   "proxy": {
     "/api/*": {
+<<<<<<< HEAD
       "target": "https://localhost:8080"
     },
     "/auth/*": {
       "target": "https://localhost:8080"
+=======
+      "target": "http://localhost:8080"
+    },
+    "/auth/*": {
+      "target": "http://localhost:8080"
+>>>>>>> 5dbeb8069b15483d2932beffb2b73b7a704b2109
     }
   },
   "dependencies": {

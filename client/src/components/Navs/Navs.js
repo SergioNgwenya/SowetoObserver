@@ -20,8 +20,8 @@ export default class Navs extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Navbar dark color="dark" expand="md">
+      <div >
+        <Navbar dark color="dark" expand="md" >
           <NavbarBrand href="/">
             <img src={logo} alt="Soweto Observer Logo" style={{height: 60, width: 'auto'}} />
           </NavbarBrand>
@@ -33,22 +33,23 @@ export default class Navs extends React.Component {
                 <NavLink to="/" className="nav-link"><i className="fa fa-home"></i> Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/category/News" className="nav-link">News</NavLink>
+                <NavLink to="/category/politcs" className="nav-link">Politcs</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/category/entertainment" className="nav-link">Entertainment</NavLink>
               </NavItem>
+             
               <NavItem>
-                <NavLink to="/category/sport" className="nav-link">Sport</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/category/community-service" className="nav-link">CommunityService</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/category/Classified" className="nav-link">Classified</NavLink>
+                <NavLink to="/category/life-style" className="nav-link">Life Style</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/Video" className="nav-link">Video</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/category/Crime" className="nav-link">Crime</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/category/sport" className="nav-link">Sport</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/About" className="nav-link">About</NavLink>
@@ -64,9 +65,7 @@ export default class Navs extends React.Component {
                   <img src={this.props.user.picture} alt="not supported" style={{height: 20, width: 'auto', borderRadius: 30}} /> {this.props.user.displayName}
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem>
-                    Profile
-                  </DropdownItem>
+                  
                   <DropdownItem href="/auth/logout">
                     Logout
                   </DropdownItem>
